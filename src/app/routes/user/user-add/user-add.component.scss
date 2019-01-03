@@ -1,0 +1,16 @@
+.cont {
+  width: 80%;
+  margin: 20px auto;
+  .form {
+    background-color: white;
+    .item {
+      margin-bottom: 10px;
+      border: 1px solid #97a8be;
+      border-radius: 4px;
+      .icon {
+        background-color: #97a8be;
+        line-height: 32px;
+      }
+    }
+  }
+}

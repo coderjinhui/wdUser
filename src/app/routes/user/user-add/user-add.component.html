@@ -1,0 +1,26 @@
+<div class="cont">
+  <h3>添加用户</h3>
+  <div class="form">
+    <nz-input-group class="item" nzCompact>
+      <i class="icon" nz-icon type="phone" theme="outline" style="width:20%"></i>
+      <input style="width: 80%" type="text" nzSize="large" placeholder="手机号" nz-input>
+    </nz-input-group>
+
+    <nz-input-group class="item" nzCompact>
+      <i class="icon" nz-icon type="home" theme="outline" style="width:20%"></i>
+      <nz-select style="width: 20%;" nzAllowClear nzPlaceHolder="选择区">
+        <nz-option *ngFor="let area of areas; index as i" [nzValue]="i" [nzLabel]="area"></nz-option>
+      </nz-select>
+      <input style="width: 60%" type="text" nzSize="large" placeholder="具体家庭住址" nz-input>
+    </nz-input-group>
+
+    <nz-input-group class="item" nzCompact>
+      <i class="icon" nz-icon type="user" theme="outline" style="width:20%"></i>
+      <input style="width: 80%" type="text" nzSize="large" placeholder="姓" nz-input>
+    </nz-input-group>
+    <nz-input-group class="item" nzCompact>
+      <i class="icon" nz-icon type="user" theme="outline" style="width:20%"></i>
+      <input style="width: 80%" type="text" nzSize="large" placeholder="姓" nz-input>
+    </nz-input-group>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<nz-layout class="g-page">
+    <nz-header class="g-head">
+      <app-head class="g-head" page="商品管理"></app-head>
+    </nz-header>
+    <nz-content class="g-cont">
+      <ul nz-menu [nzMode]="'horizontal'">
+        <li nz-menu-item [nzSelected]="true" routerLink="pay-add">
+          <i nz-icon type="pay-circle" theme="outline"></i> 
+          添加商品
+        </li>
+        <li nz-menu-item routerLink="user-add">
+          <i nz-icon type="user-add"></i> 
+          添加用户
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
