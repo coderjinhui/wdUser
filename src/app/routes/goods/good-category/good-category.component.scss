@@ -1,0 +1,18 @@
+:host {
+  .category {
+    .control {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .search {
+        width: 45%;
+      }
+    }
+    .table {
+      padding-top: 20px;
+      tr {
+        background-color: rgb(240, 242, 245);
+      }
+    }
+  }
+}

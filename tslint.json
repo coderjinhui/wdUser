@@ -2,6 +2,11 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
+  "linterOptions": {
+    "exclude": [
+      "./backend/**"
+    ]
+  },
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,

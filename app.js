@@ -1,13 +1,15 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const fs = require('fs');
-const file = require('./userSystem');
+const dir = require('./html');
 
 function createWindow () {   
   // 创建浏览器窗口
-  win = new BrowserWindow({ width: 800, height: 600, webPreferences: {"nodeIntegration":false} })
+  win = new BrowserWindow({ 
+    width: 800, height: 600, 
+    webPreferences: {devTools: true} })
 
   // 然后加载应用的 index.html。
-  win.loadFile(file.dir+'/index.html');
+  win.loadFile(dir+'/user/index.html');
 }
 
 function backend() {
@@ -28,10 +30,11 @@ function backend() {
   });
 
   app.listen(3100);
-  console.log('localhost:3000');
+  console.log('localhost:3100');
   createWindow();
 }
 
 app.on('ready', () => {
   backend();
 });
+

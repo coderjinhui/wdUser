@@ -5,6 +5,7 @@ const userModel = require('../../models/user');
 
 async function getAll(ctx) {
   const data = await userModel.find({});
+
   if(data) {
     ctx.body = {
       code: 0,
@@ -58,21 +59,7 @@ async function add (ctx) {
   const body = ctx.request.body;
   const phone = body.phone;
   const user = await table.findOne({phone});
-  if(user){
-    // 有用户
-    user.costList.push(body.costItem);
-    user.cost = (user.cost*100 + body.costItem.cost*100)/100;
-    await table.findOneAndReplace({phone}, user);
-  }else {
-    // 没有用户
-    let obj = {};
-    obj.name = body.name;
-    obj.phone = body.phone;
-    obj.cost = body.costItem.cost;
-    obj.costList = [];
-    obj.costList.push(body.costItem);
-    await table.insertOne(obj);
-  }
+  
   ctx.body = {
     code: 0,
     data: 'success'
@@ -94,8 +81,9 @@ async function getOne(ctx) {
     }
   }
 }
-module.exports = {
-  getAll,
-  add,
-  getOne
-}
+
+module.exports = [
+  // {url: '/', method: 'get', handler: getAll},
+  // {url: '/add', method: 'post', handler: add},
+  // {url: '/:phone', method: 'get', handler: getOne}
+]

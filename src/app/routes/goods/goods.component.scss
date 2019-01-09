@@ -9,6 +9,18 @@
       color: #97a8be;
       border-bottom: 1px solid #97a8be;
     }
-    
+    .g-cont {
+      display: flex;
+      flex-direction: column;
+      ul {
+        outline: none;
+        li {
+          outline: none;
+        }
+      }
+    }
   }
+}
+::ng-deep .header {
+  padding-left: 10px;
 }

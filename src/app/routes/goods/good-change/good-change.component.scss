@@ -1,0 +1,18 @@
+:host {
+  .gc-page {
+    .control {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      .search {
+        width: 90%;
+      }
+    }
+    .table {
+      padding-top: 20px;
+      tr {
+        background-color: rgb(240, 242, 245);
+      }
+    }
+  }
+}

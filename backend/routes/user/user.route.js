@@ -2,6 +2,7 @@ const Router = require('koa-router');
 
 const user = new Router();
 const userService = require('./user.service');
+const routerUtil = require('../../utils/route.glue');
 
 user.prefix('/user');
 
@@ -42,10 +43,7 @@ let ret = {
     }
   ]
 }
-user.get('/', userService.getAll);
-user.post('/add', userService.add);
-user.get('/:phone', userService.getOne);
-// user.post('/add');
+routerUtil.routeGlue(userService, user);
 
 module.exports = user;
 

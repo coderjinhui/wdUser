@@ -1,0 +1,27 @@
+<div class="ga-page">
+  <h3 class="header">添加商品</h3>
+  <!-- 商品名称 类别 进价 售价 -->
+  <div class="control">
+    <nz-input-group nzAddOnBefore="商品名称: " nzSize="large">
+      <input type="text" nz-input placeholder="请输入商品名称">
+    </nz-input-group>
+
+    <nz-input-group nzAddOnBefore="商品类别: " nzSize="large">
+      <nz-select nzAllowClear nzPlaceHolder="选择商品类别" style="display: block;" nzSize="large">
+        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+      </nz-select>
+    </nz-input-group>
+
+    <nz-input-group nzAddOnBefore="商品进价: " nzSize="large" nzAddOnAfter="元">
+      <input type="number" nz-input placeholder="请输入商品进价">
+    </nz-input-group>
+
+    <nz-input-group nzAddOnBefore="商品售价: " nzSize="large" nzAddOnAfter="元">
+      <input type="number" nz-input placeholder="请输入商品售价" >
+    </nz-input-group>
+    <nz-input-group class="submit" nzSize="large">
+      <button nz-button nzType="primary" nzSize="large">添加商品</button>
+    </nz-input-group>
+  </div>
+</div>

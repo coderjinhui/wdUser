@@ -7,15 +7,15 @@ const connectUtil = require('./models/connect');
 app.use(bodyParser());
 app.use(cors());
 
-connectUtil.connect('mongodb://localhost:27017/test_db').then(res => {
-  console.log('success')
+connectUtil.connect('mongodb://localhost:27017/test_db').then(() => {
+	console.log('success');
   const routes = require('./routes').route;
-  for(let i=0;i<routes.length;i++){
-    app.use(routes[i].routes()).use(routes[i].allowedMethods())
-  }
+  console.log(routes);
+	for(let i=0;i<routes.length;i++){
+		app.use(routes[i].routes()).use(routes[i].allowedMethods());
+	}
 }).catch(err => {
-  console.log('db connect error');
-  console.log(err);
+  console.log('db connect error', err);
 });
 
 

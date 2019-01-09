@@ -6,10 +6,22 @@ const userSchema = mongoose.Schema({
     default: 'nobody'
   },
   phone: String,
-  cost: Number,
+  cost: {
+    type: Number,
+    default: 0
+  },
   area: String,
   addr: String,
-  costList: Array
+  costList: [
+    {
+      time: Date,
+      cost: Number,
+      goods: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'goods'
+      }]
+    }
+  ]
 })
 
 const userModel = mongoose.model('users', userSchema);

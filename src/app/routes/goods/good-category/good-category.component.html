@@ -1,0 +1,47 @@
+<div class="category">
+  <h3 class="header">添加类目</h3>
+  <div class="control">
+    <!-- 添加商品类别 -->
+    <div class="search">
+      <nz-input-group nzSearch nzSize="large" [nzSuffix]="addButton">
+        <input type="text" nz-input placeholder="添加商品类别">
+      </nz-input-group>
+      <ng-template #addButton>
+        <button nz-button nzType="primary" nzSize="large" nzSearch>添加</button>
+      </ng-template>
+    </div>
+    <!-- 搜索商品类别 -->
+    <div class="search">
+      <nz-input-group nzSearch nzSize="large" [nzSuffix]="searchButton">
+        <input type="text" nz-input placeholder="搜索商品类别">
+      </nz-input-group>
+      <ng-template #searchButton>
+        <button nz-button nzType="primary" nzSize="large" nzSearch>搜索</button>
+      </ng-template>
+    </div>  
+  </div>
+  <!-- 商品分类查看 -->
+  <div class="table">
+    <nz-table [nzData]="category" nzPageSize="10" [nzTotal]="category.length" [(nzPageIndex)]="currentPage">
+      <thead>
+        <tr>
+          <th>编号</th>
+          <th>商品分类</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of category_show; index as i">
+          <td>{{i+1}}</td>
+          <td>{{item.name}}</td>
+          <td>
+              <button nz-button nzType="primary" nzSize="small">修改</button> 
+              /
+              <button nz-button nzType="danger" nzSize="small">删除</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  
+</div>

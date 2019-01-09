@@ -11,7 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconDefinition } from '@ant-design/icons-angular';
 import {
   MailOutline, UserAddOutline, PayCircleOutline, UserOutline,
-  BarcodeOutline, DashboardOutline, PhoneOutline, HomeOutline
+  BarcodeOutline, DashboardOutline, PhoneOutline, HomeOutline,
+  ShoppingCartOutline, HddOutline, ToolOutline, BranchesOutline
 } from '@ant-design/icons-angular/icons';
 import { SideComponent } from './components/side/side.component';
 import { HeadComponent } from './components/head/head.component';
@@ -19,12 +20,16 @@ import { UserComponent } from './routes/user/user.component';
 import { UserAddComponent } from './routes/user/user-add/user-add.component';
 import { PayAddComponent } from './routes/user/pay-add/pay-add.component';
 import { GoodsComponent } from './routes/goods/goods.component';
+import { GoodAddComponent } from './routes/goods/good-add/good-add.component';
+import { GoodChangeComponent } from './routes/goods/good-change/good-change.component';
+import { GoodCategoryComponent } from './routes/goods/good-category/good-category.component';
 
 
 const icons: IconDefinition[] = [
   MailOutline, UserAddOutline, PayCircleOutline,
   UserOutline, BarcodeOutline, DashboardOutline,
-  PhoneOutline, HomeOutline,
+  PhoneOutline, HomeOutline, ShoppingCartOutline,
+  HddOutline, ToolOutline, BranchesOutline
 ];
 @NgModule({
   declarations: [
@@ -35,6 +40,9 @@ const icons: IconDefinition[] = [
     UserAddComponent,
     PayAddComponent,
     GoodsComponent,
+    GoodAddComponent,
+    GoodChangeComponent,
+    GoodCategoryComponent,
   ],
   imports: [
     BrowserModule,

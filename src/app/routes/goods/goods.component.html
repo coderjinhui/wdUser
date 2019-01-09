@@ -4,13 +4,9 @@
     </nz-header>
     <nz-content class="g-cont">
       <ul nz-menu [nzMode]="'horizontal'">
-        <li nz-menu-item [nzSelected]="true" routerLink="pay-add">
-          <i nz-icon type="pay-circle" theme="outline"></i> 
-          添加商品
-        </li>
-        <li nz-menu-item routerLink="user-add">
-          <i nz-icon type="user-add"></i> 
-          添加用户
+        <li *ngFor="let item of menu; index as i" nz-menu-item [nzSelected]="i==selected" [routerLink]="item.link">
+          <i nz-icon [type]="item.icon" theme="outline"></i> 
+          {{item.title}}
         </li>
       </ul>
       <router-outlet></router-outlet>

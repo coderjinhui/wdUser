@@ -1,0 +1,15 @@
+:host {
+  .ga-page {
+    .control {
+      width: 80%;
+      margin: 20px auto;
+      nz-input-group {
+        margin-bottom: 20px;
+      }
+      .submit {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

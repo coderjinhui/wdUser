@@ -9,9 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "app": "electron .",
-    "pack": "electron-packager . myClient --out ./dist",
-    "p": "electron-packager . 'Hosts' --platform=darwin --arch=x64 --out=./dist --asar --app-version=1.0"
+    "app": "ng build && electron .",
+    "pack": "electron-packager . myClient --out ./dist --overwrite"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +47,7 @@
     "electron": "^4.0.0",
     "electron-packager": "^13.0.1",
     "electron-rebuild": "^1.8.2",
+    "eslint": "^5.12.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
