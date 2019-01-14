@@ -10,7 +10,6 @@ app.use(cors());
 connectUtil.connect('mongodb://localhost:27017/test_db').then(() => {
 	console.log('success');
   const routes = require('./routes').route;
-  console.log(routes);
 	for(let i=0;i<routes.length;i++){
 		app.use(routes[i].routes()).use(routes[i].allowedMethods());
 	}

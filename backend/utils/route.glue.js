@@ -7,6 +7,9 @@ function routeGlue(serviceArr, router) {
       case 'post':
         router.post(item.url, item.handler);
         break;
+      case 'delete': 
+        router.delete(item.url, item.handler);
+        break;
     }
   });
 }

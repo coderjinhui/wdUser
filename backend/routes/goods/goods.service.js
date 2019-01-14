@@ -1,11 +1,16 @@
 
-function getAll(){}
+function getAllGoods(){}
 
-function add(){}
+function createGood(){}
 
-function getOne(){}
+function deleteGood(){}
+
+function editGood(){}
 
 
 module.exports = [
-  // {url: '/', method: 'get', handler: getAll},
+  {url: '/', method: 'get', handler: getAllGoods},
+  {url: '/', method: 'post', handler: createGood},
+  {url: '/:id', method: 'delete', handler: deleteGood},
+  {url: '/:id', method: 'post', handler: editGood},
 ]

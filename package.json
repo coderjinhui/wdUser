@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "app": "ng build && electron .",
+    "dev": "ng build && electron .",
     "pack": "electron-packager . myClient --out ./dist --overwrite"
   },
   "private": true,
