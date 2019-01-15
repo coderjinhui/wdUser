@@ -4,7 +4,7 @@ const goodSchema = mongoose.Schema({
   name: String,
   price: [
     {
-      date: Date,
+      date: Date.now,
       inValue: Number, // 进价
       outValue: Number, // 售价
     }

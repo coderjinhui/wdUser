@@ -4,19 +4,19 @@
     <!-- 添加商品类别 -->
     <div class="search">
       <nz-input-group nzSearch nzSize="large" [nzSuffix]="addButton">
-        <input type="text" nz-input placeholder="添加商品类别">
+        <input type="text" nz-input [(ngModel)]="addCategory" placeholder="添加商品类别">
       </nz-input-group>
       <ng-template #addButton>
-        <button nz-button nzType="primary" nzSize="large" nzSearch>添加</button>
+        <button nz-button nzType="primary" nzSize="large" nzSearch (click)="createCategory()">添加</button>
       </ng-template>
     </div>
     <!-- 搜索商品类别 -->
     <div class="search">
       <nz-input-group nzSearch nzSize="large" [nzSuffix]="searchButton">
-        <input type="text" nz-input placeholder="搜索商品类别">
+        <input type="text" nz-input placeholder="搜索商品类别" [(ngModel)]="keyword">
       </nz-input-group>
       <ng-template #searchButton>
-        <button nz-button nzType="primary" nzSize="large" nzSearch>搜索</button>
+        <button nz-button nzType="primary" nzSize="large" nzSearch (click)="searchCategory()">搜索</button>
       </ng-template>
     </div>  
   </div>
@@ -35,9 +35,9 @@
           <td>{{i+1}}</td>
           <td>{{item.name}}</td>
           <td>
-              <button nz-button nzType="primary" nzSize="small">修改</button> 
+              <button nz-button nzType="primary" nzSize="small" (click)="changeCategory(item._id)">修改</button> 
               /
-              <button nz-button nzType="danger" nzSize="small">删除</button>
+              <button nz-button nzType="danger" nzSize="small" (click)="deleteCategory(item._id)">删除</button>
           </td>
         </tr>
       </tbody>

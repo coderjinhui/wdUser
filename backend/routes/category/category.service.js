@@ -60,9 +60,23 @@ async function updateCategory(ctx) {
   }
 }
 
+// get /search?keyword=1
+async function searchCategory(ctx) {
+  const query = ctx.request.query;
+  const keyword = query.keyword;
+  const condition = new RegExp(keyword);
+  const res = await categoryModel.find({name: {$regex: condition}});
+  console.log(res);
+  ctx.body = {
+    code: 0,
+    data: res
+  };
+}
+
 module.exports = [
   {url: '/', method: 'get', handler: getAllCategory},
   {url: '/', method: 'post', handler: createCategory},
   {url: '/:id', method: 'delete', handler: deleteCategory},
-  {url: '/:id', method: 'post', handler: updateCategory}
+  {url: '/:id', method: 'post', handler: updateCategory},
+  {url: '/search', method: 'get', handler: searchCategory},
 ]

@@ -17,6 +17,10 @@ categoryRouter.prefix('/api/category');
 // 参数 name: string
 // 返回值 data: 修改后的分类
 
+// get /api/category/search?keyword=11
+// 参数 keyword: string
+// 返回值 进行模糊搜索的结果数组
+
 
 routerUtil.routeGlue(categoryService, categoryRouter);
 
