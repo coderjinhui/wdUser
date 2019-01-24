@@ -1,12 +1,11 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import { GoodCategoryModel } from './good-category.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from 'app/service/http/http.service';
+
 
 @Component({
   selector: 'app-good-category',
   templateUrl: './good-category.component.html',
   styleUrls: ['./good-category.component.scss'],
-  providers: [GoodCategoryModel]
 })
 export class GoodCategoryComponent implements OnInit, DoCheck {
 
@@ -16,7 +15,7 @@ export class GoodCategoryComponent implements OnInit, DoCheck {
   addCategory: String = '';
   keyword: String = '';
 
-  constructor(public helper: GoodCategoryModel) {
+  constructor(public helper: HttpService) {
     this.getAllCategory();
   }
 
@@ -27,7 +26,7 @@ export class GoodCategoryComponent implements OnInit, DoCheck {
     this.category_show = this.category.slice(index * 10, this.currentPage * 10);
   }
   getAllCategory() {
-    this.helper.getAllCategory().subscribe(data => {
+    this.helper.category.getAll().subscribe(data => {
       if (data['code'] === 0) {
         this.category = data['data'];
         console.log(this.category);
@@ -38,13 +37,13 @@ export class GoodCategoryComponent implements OnInit, DoCheck {
     if (this.addCategory === '') {
       return false;
     }
-    this.helper.createCategoty(this.addCategory).subscribe(data => {
+    this.helper.category.create(this.addCategory).subscribe(data => {
       this.getAllCategory();
       this.addCategory = '';
     });
   }
   deleteCategory(id) {
-    this.helper.deleteCategory(id).subscribe(data => {
+    this.helper.category.delete(id).subscribe(data => {
       if (data['code'] === 0) {
         this.getAllCategory();
       }
@@ -55,7 +54,7 @@ export class GoodCategoryComponent implements OnInit, DoCheck {
       this.getAllCategory();
       return false;
     }
-    this.helper.searchCategory(this.keyword).subscribe(data => {
+    this.helper.category.search(this.keyword).subscribe(data => {
       if (data['code'] === 0) {
         this.category = data['data'];
       }

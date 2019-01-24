@@ -12,12 +12,6 @@ export class PayAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  fn() {
-    this.$http.post('http://localhost:3000/api/category', {
-      a: 'str'
-    }, {}).subscribe(data => {
-      console.log(data);
-    });
-  }
+ 
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'app/service/http/http.service';
+
 
 @Component({
   selector: 'app-good-add',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoodAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private $http: HttpService) {
+  }
 
   ngOnInit() {
+    this.init();
+  }
+
+  init() {
+    this.$http.category.getAll().subscribe(data => {
+      console.log('get all category data', data);
+    })
   }
 
 }
