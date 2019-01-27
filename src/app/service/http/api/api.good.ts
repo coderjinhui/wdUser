@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { BaseApi } from './api.base';
 import { Observable } from 'rxjs';
+import { IGoodAdd } from 'app/model';
 
 export class Goods implements BaseApi {
   private $http: HttpClient;
@@ -10,19 +11,23 @@ export class Goods implements BaseApi {
     this.host = host;
   }
   getAll(): Observable<any> {
-    const url = `${this.host}`;
+    const url = `${this.host}/api/goods`;
     return this.$http.get(url);
   }
-  create(): Observable<any> {
-    throw new Error('Method not implemented.');
+  create(data: IGoodAdd): Observable<any> {
+    const url = `${this.host}/api/goods`;
+    return this.$http.post(url, data);
   }
-  delete(...args: any[]): Observable<any> {
-    throw new Error('Method not implemented.');
+  delete(id: string): Observable<any> {
+    const url = `${this.host}/api/goods/${id}`;
+    return this.$http.delete(url);
   }
-  search(...args: any[]): Observable<any> {
-    throw new Error('Method not implemented.');
+  search(keyword): Observable<any> {
+    const url = `${this.host}/api/goods/search?keyword=${keyword}`;
+    return this.$http.get(url);
   }
   change(...args: any[]): Observable<any> {
-    throw new Error('Method not implemented.');
+    const url = `${this.host}/api/goods`;
+    return this.$http.get(url);
   }
 }

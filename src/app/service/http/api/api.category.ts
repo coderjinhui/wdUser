@@ -24,9 +24,9 @@ export class Category implements BaseApi {
     const url = `${this.host}/api/category/${id}`;
     return this.$http.delete(url);
   }
-  search(id: string): Observable<any> {
-    const url = `${this.host}/api/category/${id}`;
-    return this.$http.delete(url);
+  search(keyword: string): Observable<any> {
+    const url = `${this.host}/api/category/search?keyword=${keyword}`;
+    return this.$http.get(url);
   }
   change(id: string, name: string): Observable<any> {
     const url = `${this.host}/api/category/${id}`;
