@@ -50,13 +50,14 @@
           <td>{{ item.price.inValue }} 元/单位</td>
           <td>{{ item.price.outValue }} 元/单位</td>
           <td>
-            <button nz-button nzType="primary" nzSize="small">修改</button> /
             <button
-              nz-button
-              nzType="danger"
-              nzSize="small"
-              (click)="deleteOne(item._id)"
-            >
+              nz-button nzType="primary" nzSize="small"
+              (click)="handleChange(item._id)">修改
+            </button>
+            /
+            <button
+              nz-button nzType="danger" nzSize="small"
+              (click)="deleteOne(item._id)">
               删除
             </button>
           </td>
@@ -64,4 +65,21 @@
       </tbody>
     </nz-table>
   </div>
+  <nz-modal
+    [nzVisible]="change_id!==''" nzTitle="修改商品信息"
+    (nzOnOk)="handleOk()" (nzOnCancel)="handleCancel()">
+
+      <input class="good-change-input" nz-input placeholder="请输入修改后的商品名称" nzSize="large" [(ngModel)]="change_obj.name" />
+      <nz-select class="good-change-input" nzAllowClear nzPlaceHolder="请选择商品类别" nzShowSearch nzAllowClear
+        style="display: block;" nzSize="large" [(ngModel)]="change_obj.category">
+        <nz-option
+          *ngFor="let category of categories"
+          [nzValue]="category._id"
+          [nzLabel]="category.name"
+        ></nz-option>
+      </nz-select>
+      <input class="good-change-input" nz-input type="number" placeholder="请输入修改后的商品进价" nzSize="large" [(ngModel)]="change_obj.inValue" />
+      <input nz-input type="number" placeholder="请输入修改后的商品售价" nzSize="large" [(ngModel)]="change_obj.outValue" />
+
+  </nz-modal>
 </div>

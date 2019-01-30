@@ -22,12 +22,12 @@ export class Goods implements BaseApi {
     const url = `${this.host}/api/goods/${id}`;
     return this.$http.delete(url);
   }
-  search(keyword): Observable<any> {
+  search(keyword: string): Observable<any> {
     const url = `${this.host}/api/goods/search?keyword=${keyword}`;
     return this.$http.get(url);
   }
-  change(...args: any[]): Observable<any> {
-    const url = `${this.host}/api/goods`;
-    return this.$http.get(url);
+  change(id: string, data): Observable<any> {
+    const url = `${this.host}/api/goods/${id}`;
+    return this.$http.post(url, data);
   }
 }
