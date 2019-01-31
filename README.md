@@ -1,27 +1,44 @@
 # UserSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
+This is a personal project for angular exercise.
 
-## Development server
+## Technology in use
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Angular6 + koa + mongodb + ng-zorro
 
-## Code scaffolding
+## Update
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I'll never use ng-zorro anymore! That's really terrible experience.
 
-## Build
+## Plan
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- category
+  1. [x] add category
+  2. [x] modify category
+  3. [x] delete category
+  4. [x] search category by keywords
+- goods
+  1. [x] add goods
+  2. [x] delete goods
+  3. [x] modify goods
+  4. [x] search goods by keywords
+- user
+  1. [ ] add user
+  2. [ ] delete user
+  3. [ ] modify user
+  4. [ ] search user by phone number
+- data analysis
+  1. [ ] where is the most buyer
+  2. [ ] which is the best goods
+  3. [ ] choose date to watch sale
+  4. [ ] trend goods price: cheep time, expensive time...etc
+  5. [ ] other...
 
-## Running unit tests
+## Big Plan
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+if (hasTime) {
+  delete ngZorro
+  add material
+}
+```

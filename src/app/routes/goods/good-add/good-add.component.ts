@@ -37,6 +37,7 @@ export class GoodAddComponent implements OnInit {
       !this.formData.inValue ||
       !this.formData.outValue
     ) {
+      this.message.create('info', '商品添加不能为空');
       return false;
     }
     const data = new Good(this.formData);
@@ -52,5 +53,11 @@ export class GoodAddComponent implements OnInit {
         this.message.create('success', '添加商品成功', { nzDuration: 5000 });
       }
     });
+  }
+  handleCancelGoods() {
+    this.formData.name = '';
+    this.formData.category = '';
+    this.formData.inValue = '';
+    this.formData.outValue = '';
   }
 }

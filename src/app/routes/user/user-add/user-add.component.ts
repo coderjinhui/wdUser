@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-user-add',
@@ -22,11 +22,20 @@ export class UserAddComponent implements OnInit {
     '奉贤区',
     '金山区',
     '青浦区',
-    '崇明区',
+    '崇明区'
   ];
-  constructor() { }
+  @ViewChild('telephone') telephone: ElementRef;
+  phoneNum: number;
+  chooseAreaIndex: number;
+  userName: string;
+  userGender: number;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  validatePhone(str: string): boolean {
+    const reg = /^([0-9])+$/;
+    return reg.test(str);
   }
-
 }

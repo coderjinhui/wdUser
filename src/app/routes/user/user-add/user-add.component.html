@@ -1,26 +1,32 @@
 <div class="cont">
   <h3>添加用户</h3>
   <div class="form">
-    <nz-input-group class="item" nzCompact>
-      <i class="icon" nz-icon type="phone" theme="outline" style="width:20%"></i>
-      <input style="width: 80%" type="text" nzSize="large" placeholder="手机号" nz-input>
+    <!-- 用户姓名 -->
+    <nz-input-group nzAddOnBefore="填写用户姓名: " nzSize="large">
+      <input type="text" placeholder="姓" nz-input nzSize="large">
     </nz-input-group>
 
-    <nz-input-group class="item" nzCompact>
-      <i class="icon" nz-icon type="home" theme="outline" style="width:20%"></i>
-      <nz-select style="width: 20%;" nzAllowClear nzPlaceHolder="选择区">
+    <!-- 用户性别 -->
+    <nz-input-group nzAddOnBefore="选择用户性别: " nzSize="large">
+      <nz-select nzAllowClear nzPlaceHolder="选择性别" style="display: block;" nzSize="large">
+        <nz-option [nzValue]="0" nzLabel="男"></nz-option>
+        <nz-option [nzValue]="1" nzLabel="女"></nz-option>
+      </nz-select>
+    </nz-input-group>
+
+    <!-- 用户联系方式 -->
+    <nz-input-group nzAddOnBefore="选择用户性别: " nzSize="large">
+      <input type="text" nzSize="large" placeholder="手机号" nz-input #telephone>
+    </nz-input-group>
+
+    <!-- 联系地址 -->
+    <nz-input-group nzCompact nzSize="large">
+      <nz-select style="width: 40%;" nzAllowClear nzPlaceHolder="选择地区" nzSize="large">
         <nz-option *ngFor="let area of areas; index as i" [nzValue]="i" [nzLabel]="area"></nz-option>
       </nz-select>
-      <input style="width: 60%" type="text" nzSize="large" placeholder="具体家庭住址" nz-input>
+      <input type="text" placeholder="具体家庭住址" nz-input>
     </nz-input-group>
 
-    <nz-input-group class="item" nzCompact>
-      <i class="icon" nz-icon type="user" theme="outline" style="width:20%"></i>
-      <input style="width: 80%" type="text" nzSize="large" placeholder="姓" nz-input>
-    </nz-input-group>
-    <nz-input-group class="item" nzCompact>
-      <i class="icon" nz-icon type="user" theme="outline" style="width:20%"></i>
-      <input style="width: 80%" type="text" nzSize="large" placeholder="姓" nz-input>
-    </nz-input-group>
+    <button (click)="validatePhone(telephone.value)">dianji</button>
   </div>
 </div>
