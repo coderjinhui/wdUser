@@ -28,8 +28,8 @@ I'll never use ng-zorro anymore! That's really terrible experience.
   3. [ ] modify user
   4. [ ] search user by phone number
 - data analysis
-  1. [ ] where is the most buyer
-  2. [ ] which is the best goods
+  1. [ ] where is the most buyer
+  2. [ ] which is the best goods
   3. [ ] choose date to watch sale
   4. [ ] trend goods price: cheep time, expensive time...etc
   5. [ ] other...
