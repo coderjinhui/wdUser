@@ -5,5 +5,18 @@
     nz-input-group {
       margin-bottom: 20px;
     }
+    .connect-address {
+      position: relative;
+      nz-select {
+        float: left;
+      }
+      input {
+        float: left;
+      }
+    }
+    .submit {
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
 }

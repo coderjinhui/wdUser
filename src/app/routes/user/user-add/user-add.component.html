@@ -9,24 +9,32 @@
     <!-- 用户性别 -->
     <nz-input-group nzAddOnBefore="选择用户性别: " nzSize="large">
       <nz-select nzAllowClear nzPlaceHolder="选择性别" style="display: block;" nzSize="large">
-        <nz-option [nzValue]="0" nzLabel="男"></nz-option>
-        <nz-option [nzValue]="1" nzLabel="女"></nz-option>
+        <nz-option [nzValue]="'男'" nzLabel="男"></nz-option>
+        <nz-option [nzValue]="'女'" nzLabel="女"></nz-option>
       </nz-select>
     </nz-input-group>
 
     <!-- 用户联系方式 -->
-    <nz-input-group nzAddOnBefore="选择用户性别: " nzSize="large">
+    <nz-input-group nzAddOnBefore="用户联系方式: " nzSize="large">
       <input type="text" nzSize="large" placeholder="手机号" nz-input #telephone>
     </nz-input-group>
 
     <!-- 联系地址 -->
-    <nz-input-group nzCompact nzSize="large">
+    <nz-input-group class="connect-address" nzCompact nzSize="large" nzAddOnBefore="用户联系地址: ">
       <nz-select style="width: 40%;" nzAllowClear nzPlaceHolder="选择地区" nzSize="large">
         <nz-option *ngFor="let area of areas; index as i" [nzValue]="i" [nzLabel]="area"></nz-option>
       </nz-select>
-      <input type="text" placeholder="具体家庭住址" nz-input>
+      <input type="text" style="width: 60%;" placeholder="具体家庭住址" nz-input>
     </nz-input-group>
-
-    <button (click)="validatePhone(telephone.value)">dianji</button>
+    <!-- 添加用户按钮组 -->
+    <nz-input-group class="submit" nzSize="large">
+      <button nz-button nzType="primary" nzSize="large">
+        添加用户
+      </button>
+      <button nz-button nzType="primary"
+        nzSize="large" style="margin-right: 20px;">
+        清空信息
+      </button>
+    </nz-input-group>
   </div>
 </div>
