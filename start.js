@@ -3,7 +3,7 @@ console.log('starting......');
 cp.exec('mongod --dbpath ./data');
 console.log('db ready');
 setTimeout(() => {
-  cp.exec('node ./backend/app.js');
+  cp.exec('nodemon ./backend/app.js');
   setTimeout(() => {
     console.log('backend ready');
   }, 800);

@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { UserComponent } from './routes/user/user.component';
 import { UserAddComponent } from './routes/user/user-add/user-add.component';
 import { PayAddComponent } from './routes/user/pay-add/pay-add.component';
+import { UserChangeComponent } from './routes/user/user-change/user-change.component';
+
 import { GoodsComponent } from './routes/goods/goods.component';
 import { GoodAddComponent } from './routes/goods/good-add/good-add.component';
 import { GoodChangeComponent } from './routes/goods/good-change/good-change.component';
@@ -30,6 +33,10 @@ const routes: Routes = [
       {
         path: 'pay-add',
         component: PayAddComponent
+      },
+      {
+        path: 'user-change',
+        component: UserChangeComponent
       }
     ]
   },
@@ -62,4 +69,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

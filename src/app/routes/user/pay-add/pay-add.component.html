@@ -1,4 +1,89 @@
-<p>
-  pay-add works!
-</p>
-<button (click)="fn()">hahah</button>
+<div class="pa">
+  <h3 class="header">修改用户</h3>
+  <div class="control">
+    <!-- 搜索用户 -->
+    <div class="search">
+      <nz-input-group nzSearch nzSize="large" [nzSuffix]="searchButton">
+        <input [(ngModel)]="searchText" type="text" nz-input placeholder="搜索用户" (input)="handleSearchInput()"/>
+      </nz-input-group>
+      <ng-template #searchButton>
+        <button nz-button nzType="primary" nzSize="large" nzSearch (click)="search()">
+          搜索
+        </button>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="table">
+    <nz-table
+      [nzData]="users"
+      nzPageSize="10"
+      [nzTotal]="users.length"
+      [(nzPageIndex)]="currentPage"
+    >
+      <thead>
+        <tr>
+          <th>编号</th>
+          <th>用户名称</th>
+          <th>用户手机</th>
+          <th>所在区</th>
+          <th>详细地址</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users_show; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}{{item.gender=='男'?'先生':'女士'}}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.area }}</td>
+          <td>{{ item.addr }}</td>
+          <td>
+            <button
+              nz-button nzType="primary" nzSize="small"
+              (click)="addCostList(item._id)">添加消费记录
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <nz-modal nzWidth="80%"
+    [nzVisible]="change_id!==''" nzTitle="添加消费记录"
+    (nzOnOk)="handleOk()" (nzOnCancel)="handleCancel()">
+    <nz-table [nzData]="costList" [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th>编号</th>
+          <th>购买产品</th>
+          <th>购买数量</th>
+          <th>总价/元</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of costList; index as i;">
+          <td>{{i+1}}</td>
+          <td>
+            <input placeholder="请输入商品名称" nz-input [(ngModel)]="costList[i].name" (ngModelChange)="autoCompleteFilter($event)" [nzAutocomplete]="auto">
+            <nz-autocomplete #auto>
+              <nz-auto-option *ngFor="let good of goods_show" [nzValue]="good.name">{{good.name}}</nz-auto-option>
+            </nz-autocomplete>
+          </td>
+          <td>
+            <input nz-input type="number" [(ngModel)]="costList[i].num" placeholder="请输入商品数量" >
+          </td>
+          <td>
+            <input nz-input type="number" [(ngModel)]="costList[i].cost" placeholder="请输入商品总价">
+          </td>
+          <td>
+            <button nz-button nzType="primary" (click)="addOneCost()">添加商品</button>
+            /
+            <button nz-button nzType="primary" (click)="deleteOneCost(i)">删除商品</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-modal>
+  </div>
+  

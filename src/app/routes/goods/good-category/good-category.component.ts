@@ -10,7 +10,7 @@ export class GoodCategoryComponent implements OnInit, DoCheck {
   category = [];
   category_show = [];
   currentPage = 1;
-  addCategory: String = '';
+  addCategory: string;
   keyword: string;
   showModal = false;
   isOkLoading = false;

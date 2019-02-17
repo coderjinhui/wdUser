@@ -9,7 +9,8 @@ import { Router, NavigationEnd } from '@angular/router';
 export class UserComponent implements OnInit {
   menu = [
     { link: 'pay-add', icon: 'shopping-cart', title: '添加消费' },
-    { link: 'user-add', icon: 'user-add', title: '添加用户' }
+    { link: 'user-add', icon: 'user-add', title: '添加用户' },
+    { link: 'user-change', icon: 'user-add', title: '修改用户' }
   ];
   selected = 0;
   constructor(router: Router) {

@@ -35,6 +35,7 @@ import { GoodChangeComponent } from './routes/goods/good-change/good-change.comp
 import { GoodCategoryComponent } from './routes/goods/good-category/good-category.component';
 
 import { InterceptorService } from 'app/service/http/interceptor.service';
+import { UserChangeComponent } from './routes/user/user-change/user-change.component';
 
 const icons: IconDefinition[] = [
   MailOutline,
@@ -61,7 +62,8 @@ const icons: IconDefinition[] = [
     GoodsComponent,
     GoodAddComponent,
     GoodChangeComponent,
-    GoodCategoryComponent
+    GoodCategoryComponent,
+    UserChangeComponent
   ],
   imports: [
     BrowserModule,

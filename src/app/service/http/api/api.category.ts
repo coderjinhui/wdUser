@@ -15,7 +15,7 @@ export class Category implements BaseApi {
     const url = `${this.host}/api/category`;
     return this.$http.get(url);
   }
-  create(...args: any[]): Observable<any> {
+  create(name: string): Observable<any> {
     const url = `${this.host}/api/category`;
     return this.$http.post(url, {
       name: name
