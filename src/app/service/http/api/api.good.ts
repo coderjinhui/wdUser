@@ -3,13 +3,13 @@ import { BaseApi } from './api.base';
 import { Observable } from 'rxjs';
 import { IGoodAdd } from 'app/model';
 
-export class Goods implements BaseApi {
-  private $http: HttpClient;
-  private host: string;
-  constructor($http: HttpClient, host: string) {
-    this.$http = $http;
-    this.host = host;
-  }
+export class Goods extends BaseApi {
+  // private $http: HttpClient;
+  // private host: string;
+  // constructor($http: HttpClient, host: string) {
+  //   this.$http = $http;
+  //   this.host = host;
+  // }
   getAll(): Observable<any> {
     const url = `${this.host}/api/goods`;
     return this.$http.get(url);

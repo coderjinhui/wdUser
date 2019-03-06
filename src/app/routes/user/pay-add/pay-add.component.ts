@@ -92,6 +92,10 @@ export class PayAddComponent implements OnInit, DoCheck {
       temp.num = Number(this.costList[i].num);
       tempList.push(temp);
     }
+    console.log(tempList);
+    this.$http.cost.create(this.change_id, tempList).subscribe(data => {
+      console.log('sss', data);
+    });
   }
   handleCancel() {
     this.change_id = '';

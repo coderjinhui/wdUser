@@ -3,13 +3,13 @@ import { BaseApi } from './api.base';
 import { Observable } from 'rxjs';
 import { IUser } from 'app/model';
 
-export class User implements BaseApi {
-  private $http: HttpClient;
-  private host: string;
-  constructor($http: HttpClient, host: string) {
-    this.$http = $http;
-    this.host = host;
-  }
+export class User extends BaseApi {
+  // private $http: HttpClient;
+  // private host: string;
+  // constructor($http: HttpClient, host: string) {
+  //   this.$http = $http;
+  //   this.host = host;
+  // }
   getAll(): Observable<any> {
     const url = `${this.host}/api/user`;
     return this.$http.get(url);

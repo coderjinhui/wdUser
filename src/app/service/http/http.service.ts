@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 import { Category } from './api/api.category';
 import { Goods } from './api/api.good';
 import { User } from './api/api.user';
+import { Cost } from './api/api.cost';
 
 import { Observable } from 'rxjs';
 
@@ -22,4 +23,5 @@ export class HttpService {
   public category = new Category(this.$http, this.host);
   public goods = new Goods(this.$http, this.host);
   public user = new User(this.$http, this.host);
+  public cost = new Cost(this.$http, this.host);
 }

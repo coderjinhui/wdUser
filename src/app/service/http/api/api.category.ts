@@ -3,14 +3,7 @@ import { BaseApi } from './api.base';
 import { Observable } from 'rxjs';
 
 // 商品分类api
-export class Category implements BaseApi {
-  $http: HttpClient;
-  host: string;
-  constructor($http: HttpClient, host: string) {
-    this.$http = $http;
-    this.host = host;
-  }
-
+export class Category extends BaseApi {
   getAll(): Observable<any> {
     const url = `${this.host}/api/category`;
     return this.$http.get(url);
