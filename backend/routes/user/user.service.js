@@ -87,7 +87,15 @@ async function searchUser(ctx) {
   const phone = query.phone;
   const condition = new RegExp(phone);
   try {
-    const user = await userModel.find({ phone: { $regex: condition } });
+    const user = await userModel.find({
+      $or: [
+        { name: { $regex: condition } },
+        { area: { $regex: condition } },
+        { addr: { $regex: condition } },
+        { phone: { $regex: condition } }
+      ]
+    });
+
     ctx.body = {
       code: 0,
       data: user
